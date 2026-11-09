@@ -119,6 +119,71 @@
   .calls a{text-decoration:none;color:#fff;background:linear-gradient(140deg,#ef4655,#c2263a);border-radius:16px;padding:14px;text-align:center;font-weight:800;font-size:24px}
   .calls a span{display:block;font-size:12px;font-weight:600;opacity:.85}
   .confetti{position:fixed;inset:0;pointer-events:none;z-index:9}
+
+  /* tools */
+  .top-r{display:flex;gap:8px;align-items:center}
+  .icon-btn{width:36px;height:36px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-size:17px;transition:.2s}
+  .icon-btn.on{background:var(--accent);color:var(--accent-text);border-color:transparent}
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .tool{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:4px;min-height:118px;transition:.2s}
+  .tool:active{transform:scale(.97)}
+  .tool em{font-style:normal;font-size:26px;margin-bottom:4px}
+  .tool b{font-size:15px;line-height:1.25}
+  .tool span{font-size:12.5px;color:var(--hint);line-height:1.35}
+  .tool.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,var(--bg2))}
+  .tool .sw{margin-top:auto;align-self:flex-start;width:38px;height:22px;border-radius:99px;background:var(--line);position:relative;transition:.2s}
+  .tool .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
+  .tool.on .sw{background:var(--accent)} .tool.on .sw::after{left:19px}
+  .say{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent);padding:7px 12px;border-radius:99px;background:color-mix(in srgb,var(--accent) 13%,transparent);margin-top:10px}
+  .no-tts .say{display:none!important}
+
+  /* checker */
+  .lead{color:var(--hint);margin-bottom:12px}
+  textarea{width:100%;min-height:130px;resize:vertical;font:inherit;font-size:15.5px;color:var(--text);background:var(--bg2);border:1.5px solid var(--line);border-radius:16px;padding:14px;outline:none;transition:border-color .2s}
+  textarea:focus{border-color:var(--accent)}
+  .chips{display:flex;gap:8px;overflow-x:auto;margin:10px -16px 14px;padding:0 16px 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chips button{flex:none;font-size:13px;padding:7px 12px;border-radius:99px;background:var(--bg2);border:1px solid var(--line);color:var(--text)}
+  .gauge{position:relative;width:230px;margin:6px auto 0}
+  .gauge svg{width:100%;display:block}
+  #gArc{transition:stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1)}
+  #needle{transform-box:view-box;transform-origin:100px 100px;transition:transform 1.1s cubic-bezier(.3,1.4,.4,1)}
+  .gv{text-align:center;margin-top:-6px}
+  .gv b{font-size:38px;line-height:1}
+  .gv small{font-size:16px;color:var(--hint)}
+  .risk{text-align:center;margin:6px 0 16px}
+  .risk h2{font-size:22px;letter-spacing:-.01em}
+  .risk p{color:var(--hint)}
+  .lvl0 h2{color:var(--safe)} .lvl1 h2{color:var(--warn)} .lvl2 h2{color:var(--danger)}
+  .marked{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px;white-space:pre-wrap;word-break:break-word}
+  .marked mark{background:#ef465533;box-shadow:0 0 0 2px #ef465555;color:inherit;border-radius:4px}
+  .flags{display:grid;gap:8px;margin-bottom:14px}
+  .flag{display:flex;gap:12px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;animation:in .35s both}
+  .flag i{font-style:normal;font-size:18px;line-height:1.3}
+  .flag b{display:block;margin-bottom:2px}
+  .flag span{font-size:14px;opacity:.85}
+  .tip{border-radius:14px;padding:12px 14px;margin-bottom:14px;font-weight:600}
+  .lvl0 .tip,.tip.lvl0{background:#22b57320} .tip.lvl1{background:#f5a52422} .tip.lvl2{background:#ef465522}
+
+  /* режим для пожилых */
+  body.big{font-size:19px;--hint:color-mix(in srgb,var(--text) 78%,transparent);--line:color-mix(in srgb,var(--text) 22%,transparent)}
+  body.big .hero h1{font-size:31px}
+  body.big .hero p,body.big .lead{font-size:18px}
+  body.big .stat{display:none}
+  body.big .btn{padding:20px;font-size:20px;border-radius:18px}
+  body.big .bubble{font-size:21px;line-height:1.5}
+  body.big .who b{font-size:19px}
+  body.big .choice{padding:24px 10px;font-size:20px}
+  body.big .choice em{font-size:34px}
+  body.big .rule,body.big .step,body.big .flag span,body.big .mist div{font-size:18px}
+  body.big .verdict p{font-size:19px}
+  body.big .verdict h3{font-size:22px}
+  body.big .sec{font-size:15px}
+  body.big .tool b{font-size:17px} body.big .tool span{font-size:14.5px}
+  body.big .say{font-size:16px;padding:10px 16px}
+  body.big textarea{font-size:19px;min-height:160px}
+  body.big .chips button{font-size:16px;padding:10px 14px}
+  body.big .disclaimer{font-size:14px}
 </style>
 </head>
 <body>
@@ -126,7 +191,10 @@
 
   <div class="top">
     <div class="brand"><div class="shield">🛡</div><span data-t="brand"></span></div>
-    <div class="lang"><button data-lang="ru">RU</button><button data-lang="sah">САХА</button></div>
+    <div class="top-r">
+      <button class="icon-btn" id="bigBtn" aria-label="Крупный режим">👓</button>
+      <div class="lang"><button data-lang="ru">RU</button><button data-lang="sah">САХА</button></div>
+    </div>
   </div>
 
   <!-- HOME -->
@@ -142,8 +210,14 @@
       <button class="btn" id="start"><span data-t="start"></span> →</button>
     </div>
 
+    <div class="tools">
+      <button class="tool" id="toCheck"><em>🔍</em><b data-t="checkCard"></b><span data-t="checkCardSub"></span></button>
+      <button class="tool" id="bigCard"><em>👓</em><b data-t="bigCard"></b><span data-t="bigCardSub"></span><i class="sw"></i></button>
+    </div>
+
     <div class="sec" data-t="rulesTitle"></div>
     <div class="rules" id="rules"></div>
+    <button class="say" data-say="rules">🔊 <span data-t="listen"></span></button>
 
     <div class="sec"></div>
     <button class="btn ghost" id="toHelp">🆘 <span data-t="helpBtn"></span></button>
@@ -190,6 +264,41 @@
       <a href="tel:112">112<span data-t="emergency"></span></a>
     </div>
     <div class="steps" id="steps"></div>
+    <button class="say" data-say="steps">🔊 <span data-t="listen"></span></button>
+  </section>
+
+  <!-- CHECK -->
+  <section class="screen" id="check">
+    <div class="qhead"><button class="back" id="checkBack">←</button><b data-t="checkTitle"></b></div>
+    <div id="checkForm">
+      <p class="lead" data-t="checkLead"></p>
+      <textarea id="msg"></textarea>
+      <div class="chips" id="chips"></div>
+      <button class="btn" id="checkBtn">🔍 <span data-t="checkBtn"></span></button>
+      <p class="disclaimer" data-t="checkNote"></p>
+    </div>
+    <div id="checkRes" style="display:none">
+      <div class="gauge">
+        <svg viewBox="0 0 200 112">
+          <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#22b573"/><stop offset=".5" stop-color="#f5a524"/><stop offset="1" stop-color="#ef4655"/></linearGradient></defs>
+          <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="var(--bg2)" stroke-width="16" stroke-linecap="round"/>
+          <path id="gArc" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="url(#gg)" stroke-width="16" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+          <g id="needle"><line x1="100" y1="100" x2="100" y2="38" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="100" r="8" fill="var(--text)"/></g>
+        </svg>
+        <div class="gv"><b id="gNum">0</b><small>%</small></div>
+      </div>
+      <div class="risk" id="risk"><h2></h2><p></p></div>
+      <div class="sec" data-t="yourMsg"></div>
+      <div class="marked" id="marked"></div>
+      <div class="sec" id="flagsTitle" data-t="flagsFound"></div>
+      <div class="flags" id="flags"></div>
+      <div class="tip" id="tip"></div>
+      <div class="row">
+        <button class="say" data-say="check" style="justify-self:center;margin:0 0 4px">🔊 <span data-t="listen"></span></button>
+        <button class="btn" id="checkAgain">↻ <span data-t="checkAgain"></span></button>
+        <button class="btn ghost" id="toHelp3">🆘 <span data-t="helpBtn"></span></button>
+      </div>
+    </div>
   </section>
 </div>
 <canvas class="confetti" id="confetti"></canvas>
@@ -330,6 +439,7 @@ const tg = window.Telegram && Telegram.WebApp;
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 let lang = store.get("lang") || ((tg && tg.initDataUnsafe?.user?.language_code)==="sah" ? "sah" : "ru");
 let i = 0, score = 0, wrong = [], order = [];
+let big = store.get("big")==="1";
 const $ = s => document.querySelector(s);
 const T = k => I18N[lang][k];
 const haptic = t => { try{ t==="ok"||t==="err" ? tg.HapticFeedback.notificationOccurred(t==="ok"?"success":"error") : tg.HapticFeedback.impactOccurred("light") }catch(e){} };
@@ -347,6 +457,7 @@ function applyLang(){
   $("#nScen").textContent = SCEN.length;
   if ($("#quiz").classList.contains("on")) renderQ(true);
   if ($("#result").classList.contains("on")) renderResult(false);
+  extraLang();
 }
 document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; store.set("lang",lang); haptic(); applyLang(); });
 
@@ -356,6 +467,7 @@ function show(id, push=true){
   document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("on", s.id===id));
   if (push) stack.push(id);
   window.scrollTo({top:0});
+  stopSay();
   if (tg){ stack.length>1 && id!=="home" ? tg.BackButton.show() : tg.BackButton.hide(); }
 }
 function back(){ stack.pop(); show(stack[stack.length-1]||"home", false); if(stack.length===0) stack.push("home"); }
@@ -379,7 +491,8 @@ function renderQ(keepVerdict){
   phone.innerHTML = `
     ${s.ctx ? `<div class="ctx">💡 ${s.ctx[lang]}</div>` : ""}
     <div class="who"><div class="ava">${s.ava}</div><div><b>${s.from[lang]}</b><span>${T(s.type)}${s.num?" · "+s.num:""}</span></div></div>
-    <div class="bubble">${html}</div>`;
+    <div class="bubble">${html}</div>
+    <button class="say" data-say="q">🔊 ${T("listen")}</button>`;
   if (!keepVerdict){
     phone.dataset.answered="0";
     $("#verdict").innerHTML="";
@@ -388,7 +501,7 @@ function renderQ(keepVerdict){
     bub.style.display="none";
     const typing = document.createElement("div"); typing.className="typing"; typing.innerHTML="<i></i><i></i><i></i>";
     bub.before(typing);
-    setTimeout(()=>{ typing.remove(); bub.style.display=""; }, 700);
+    setTimeout(()=>{ typing.remove(); bub.style.display=""; if (big) say(sayText("q")); }, 700);
   } else if (answered) { renderVerdict(); }
 }
 function answer(a){
@@ -402,6 +515,7 @@ function answer(a){
   document.querySelectorAll(".choice").forEach(b=>b.disabled=true);
   $("#barFill").style.width = `${((i+1)/SCEN.length)*100}%`;
   renderVerdict();
+  if (big) say(sayText("v"));
 }
 function renderVerdict(){
   const s = SCEN[order[i]]; const ok = $("#phone").dataset.ok==="1";
@@ -411,6 +525,7 @@ function renderVerdict(){
       <h3>${ok?"✅":"❌"} ${T(ok?"right":"wrong")}</h3>
       <span class="tag ${s.fraud?"f":"s"}">${T(s.fraud?"wasFraud":"wasSafe")}</span>
       <p>${s.why[lang]}</p>
+      <button class="say" data-say="v" style="margin:0 0 12px">🔊 ${T("listen")}</button>
       <button class="btn" id="nextBtn">${T(last?"finish":"next")} →</button>
     </div>`;
   $("#nextBtn").onclick = ()=>{ haptic(); if(last){ finish(); } else { i++; renderQ(); } };
@@ -459,6 +574,234 @@ function confetti(){
     P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.05;p.a+=.1;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/2,p.r,p.r*.6);x.restore();});
     if(f++<200) requestAnimationFrame(loop); else x.clearRect(0,0,c.width,c.height); })();
 }
+
+/* ===== Доп. тексты: проверка сообщений и режим для пожилых ===== */
+Object.assign(I18N.ru, {
+  listen:"Прослушать",
+  checkCard:"Проверь сообщение", checkCardSub:"Вставьте СМС или ссылку — покажем признаки обмана",
+  bigCard:"Крупный режим", bigCardSub:"Большой шрифт и озвучка — для родителей и бабушек",
+  checkTitle:"Проверка сообщения",
+  checkLead:"Вставьте текст подозрительного СМС, письма или сообщения. Анализ идёт прямо на телефоне — текст никуда не отправляется.",
+  checkPh:"Например: «Ваша карта заблокирована, срочно продиктуйте код…»",
+  checkBtn:"Проверить", checkAgain:"Проверить другое",
+  checkNote:"Проверка подсказывает признаки, но не гарантирует безопасность. Сомневаетесь — звоните 102.",
+  examples:["🏦 Банк","🏛 Госуслуги","👩 «Мама»","🗳 Голосование","🏠 Обычное"],
+  empty:"Вставьте текст сообщения — хотя бы пару слов.",
+  yourMsg:"Ваше сообщение", flagsFound:"Найденные признаки",
+  levels:[["Признаков обмана не найдено","Но всё равно не сообщайте коды и не переводите деньги незнакомцам."],
+          ["Подозрительно","Есть приёмы, которые часто используют мошенники."],
+          ["Похоже на мошенничество","Не отвечайте, не переходите по ссылкам и ничего не переводите."]],
+  tips:["✅ Если сомневаетесь — уточните у отправителя по известному вам номеру.",
+        "⚠️ Не спешите. Перезвоните в банк или человеку сами по известному номеру.",
+        "🚨 Заблокируйте отправителя. Если уже сообщили данные — сразу звоните в банк и в 102."]
+});
+Object.assign(I18N.sah, {
+  listen:"Истиэххэ",
+  checkCard:"Суругу бэрэбиэркэлээ", checkCardSub:"СМС эбэтэр сигэни киллэр — албын бэлиэлэрин көрдөрүөхпүт",
+  bigCard:"Улахан режим", bigCardSub:"Улахан буукуба уонна саҥа — төрөппүттэргэ, эбээлэргэ",
+  checkTitle:"Суругу бэрэбиэркэлээһин",
+  checkLead:"Саарбах СМС, сурук тиэкиһин киллэр. Анализ төлөпүөҥҥэр эрэ барар — тиэкис ханна да ыытыллыбат.",
+  checkPh:"Холобур: «Каартаҥ бобулунна, түргэнник коду эт…»",
+  checkBtn:"Бэрэбиэркэлээ", checkAgain:"Атыны бэрэбиэркэлээ",
+  checkNote:"Бэрэбиэркэ бэлиэлэри көрдөрөр, ол гынан баран куттала суоҕун мэктиэлээбэт. Саарбаҕалаатаххына — 102-ҕэ эрий.",
+  examples:["🏦 Баан","🏛 Госуслуги","👩 «Ийэ»","🗳 Куоластааһын","🏠 Көннөрү"],
+  empty:"Сурук тиэкиһин киллэр — икки-үс тылы да буоллун.",
+  yourMsg:"Эн суругуҥ", flagsFound:"Булуллубут бэлиэлэр",
+  levels:[["Албын бэлиэтэ көстүбэтэ","Ол да буоллар билбэт дьоҥҥор коду этимэ, харчы ыытыма."],
+          ["Саарбах","Албынньыттар туттар ньымалара баар."],
+          ["Албыҥҥа маарынныыр","Хоруйдаама, сигэнэн кииримэ, тугу да ыытыма."]],
+  tips:["✅ Саарбаҕалаатаххына — ыытааччыттан билэр нүөмэргэр эрийэн ыйыт.",
+        "⚠️ Ыксаама. Баанҥа эбэтэр киһиэхэ билэр нүөмэргэр бэйэҥ эрий.",
+        "🚨 Ыытааччыны бобуттар. Дааннайдаргын эппит буоллаххына — тута баанҥа уонна 102-ҕэ эрий."]
+});
+
+const EXAMPLES = [
+  "Служба безопасности банка. С вашей карты пытаются списать 48 000 ₽. Срочно продиктуйте код из СМС, чтобы отменить операцию.",
+  "Ваш аккаунт Госуслуг взломан! Для восстановления доступа перейдите по ссылке: gosuslugi-vosstanovlenie.ru",
+  "Мам, это мой новый номер, телефон разбил. Срочно переведи 10 000 на эту карту, не звони, потом объясню",
+  "Привет! Проголосуй за мою племянницу в конкурсе, пожалуйста 🙏 bit.ly/golos-2026",
+  "Привет! Завтра в 18:00 собрание жильцов во дворе, приходи."
+];
+
+/* ===== Правила анализатора. w — вес признака в процентах риска ===== */
+const RULES = [
+  { id:"code", w:35, ic:"🔑",
+    t:{ru:"Просят код из СМС", sah:"СМС кодун көрдүүллэр"},
+    d:{ru:"Код из СМС — это ключ от банка или Госуслуг. Его не спрашивают ни банк, ни полиция, ни курьер.",
+       sah:"СМС кода — баан эбэтэр Госуслуги күлүүһэ. Ону баан да, полиция да, курьер да көрдөөбөт."} },
+  { id:"safe", w:40, ic:"💸", re:/(безопасн|резервн|защищ[её]нн|специальн)\w*\s+(сч[её]т|ячейк)\w*/gi,
+    t:{ru:"«Безопасный счёт»", sah:"«Куттала суох счет»"},
+    d:{ru:"Таких счетов не существует. Это главный признак мошенников.", sah:"Маннык счет суох. Бу албынньыттар сүрүн бэлиэлэрэ."} },
+  { id:"card", w:35, ic:"💳", re:/(cvc2?|cvv2?|тр[иеё]\s+цифр\w*|срок\w*\s+действия|обратн\w+\s+сторон\w*)/gi,
+    t:{ru:"Просят данные карты", sah:"Каарта дааннайдарын көрдүүллэр"},
+    d:{ru:"Чтобы перевести вам деньги, нужен только номер. CVC и срок нужны, чтобы деньги списать.",
+       sah:"Харчы ыытарга нүөмэр эрэ наада. CVC уонна болдьох харчыны суоттарга наадалар."} },
+  { id:"auth", w:15, ic:"🎭", re:/(служб\w*\s+безопасност\w*|сотрудник\w*\s+банка|следовател\w*|следствен\w*|полици\w*|фсб|прокурат\w*|центробанк\w*|центральн\w+\s+банк\w*|цб\s*рф|росфинмониторинг\w*)/gi,
+    t:{ru:"Представляются банком или органами", sah:"Баан эбэтэр былаас аатынан саҥараллар"},
+    d:{ru:"Мошенники называют себя сотрудниками банка, полиции или ФСБ, чтобы вызвать доверие и страх.",
+       sah:"Албынньыттар итэҕэтээри, куттаары баан, полиция, ФСБ үлэһитэ буолан саҥараллар."} },
+  { id:"rush", w:15, ic:"⏰", re:/(срочно|немедленно|прямо\s+сейчас|в\s+течени[ие]\s+\d+\s*(минут|час)\w*|последн\w+\s+предупрежд\w*|сегодня\s+же)/gi,
+    t:{ru:"Давят срочностью", sah:"Түргэтэтэллэр"},
+    d:{ru:"Спешка нужна, чтобы вы не успели подумать и посоветоваться.", sah:"Толкуйдуоҥ, сүбэлэһиэҥ иннинэ түргэтэтэллэр."} },
+  { id:"fear", w:15, ic:"😨", re:/(заблокир\w*|блокировк\w*|взлом\w*|подозрительн\w*\s+операц\w*|несанкционир\w*|оформ\w*\s+кредит\w*|списат\w*|списан\w*|уголовн\w*|арест\w*)/gi,
+    t:{ru:"Пугают", sah:"Куттууллар"},
+    d:{ru:"Угроза блокировки, кредита или уголовного дела — способ лишить вас спокойствия.",
+       sah:"Бобуу, кирэдьиит, суут кутталлара — эйигин долгутар ньыма."} },
+  { id:"money", w:15, ic:"💰", re:/(переведи\w*|перевед[иёе]т\w*|перечисл\w*|предоплат\w*|оплатит\w*|внесит\w*|сними\w*\s+наличн\w*|обналич\w*)/gi,
+    t:{ru:"Просят перевести или снять деньги", sah:"Харчы ыытарга эбэтэр устарга көрдүүллэр"},
+    d:{ru:"Просьба перевести деньги от незнакомца или с «нового номера» — повод остановиться.",
+       sah:"Билбэт киһи эбэтэр «саҥа нүөмэр» харчы көрдүүр буоллаҕына — тохтоо."} },
+  { id:"newnum", w:20, ic:"📱", re:/(нов\w+\s+номер\w*|телефон\s+(сломал|разбил|потерял|украли)\w*)/gi,
+    t:{ru:"«Это мой новый номер»", sah:"«Бу мин саҥа нүөмэрим»"},
+    d:{ru:"Так притворяются родственниками. Перезвоните человеку на старый номер.", sah:"Аймах буолан кубулуйаллар. Эргэ нүөмэригэр эрий."} },
+  { id:"iso", w:25, ic:"🤫", re:/(не\s+звони\w*|не\s+перезванива\w*|никому\s+не\s+(рассказ|говор)\w*|тайн\w*\s+следстви\w*)/gi,
+    t:{ru:"Просят никому не говорить", sah:"Кимиэхэ да кэпсээмэ диэтэллэр"},
+    d:{ru:"Мошенникам важно, чтобы вы ни с кем не посоветовались.", sah:"Албынньыттарга эн кимниин да сүбэлэспэтэххинэ наада."} },
+  { id:"prize", w:20, ic:"🎁", re:/(выигра\w*|выигрыш\w*|приз\w*|компенсац\w*|положен\w*\s+выплат\w*|возврат\w*\s+(налог|средств)\w*)/gi,
+    t:{ru:"Обещают деньги или выигрыш", sah:"Харчы эбэтэр бириис эрэннэрэллэр"},
+    d:{ru:"Бесплатные выплаты и призы — приманка, чтобы получить данные карты.", sah:"Босхо төлөбүрү, бириизи каарта дааннайын ылаары эрэннэрэллэр."} },
+  { id:"job", w:20, ic:"💼", re:/(работ\w*\s+на\s+дому|заработ\w*\s+от\s+\d+|пассивн\w+\s+доход\w*|гарантированн?\w*\s+доход\w*|инвестиц\w*)/gi,
+    t:{ru:"Лёгкий заработок", sah:"Чэпчи харчы"},
+    d:{ru:"Предложения быстро заработать часто заканчиваются просьбой «оплатить обучение» или вложить деньги.",
+       sah:"Түргэнник харчы булуу этиилэрэ үксүгэр «үөрэх төлөбүрүнэн» эбэтэр харчы угуунан бүтэллэр."} },
+  { id:"vote", w:15, ic:"🗳", re:/(проголосу\w*|голосовани\w*)/gi,
+    t:{ru:"Просят проголосовать", sah:"Куоластааҥ диэтэллэр"},
+    d:{ru:"Так крадут аккаунты: на «странице голосования» просят войти через Telegram или ввести код.",
+       sah:"Маннык аккаунту уоруйаллар: «куоластааһын» сирэйигэр Telegram нөҥүө киирэргэ эбэтэр код киллэрэргэ көрдүүллэр."} },
+  { id:"fake", w:40, ic:"🎣",
+    t:{ru:"Поддельный адрес сайта", sah:"Сымыйа саайт аадырыһа"},
+    d:{ru:(x,o)=>`«${x}» похож на официальный сайт, но им не является. Настоящий адрес: ${o}.`,
+       sah:(x,o)=>`«${x}» официальнай саайкка маарынныыр, ол гынан баран кини буолбатах. Чахчы аадырыс: ${o}.`} },
+  { id:"short", w:20, ic:"🔗",
+    t:{ru:"Сокращённая ссылка", sah:"Кылгатыллыбыт сигэ"},
+    d:{ru:"Короткие ссылки скрывают, куда вы на самом деле попадёте.", sah:"Кылгас сигэ ханна киирэргин саһарар."} },
+  { id:"link", w:10, ic:"🌐",
+    t:{ru:"Есть ссылка", sah:"Сигэ баар"},
+    d:{ru:"Не переходите по ссылкам из неожиданных сообщений — откройте сайт сами.", sah:"Күүппэтэх суруктан сигэнэн кииримэ — саайты бэйэҥ арый."} }
+];
+const BRANDS = {gosuslug:"gosuslugi.ru", sber:"sberbank.ru", vtb:"vtb.ru", tinkoff:"tbank.ru", tbank:"tbank.ru", alfa:"alfabank.ru",
+  mvd:"мвд.рф", nalog:"nalog.gov.ru", pochta:"pochta.ru", avito:"avito.ru", ozon:"ozon.ru", wildberr:"wildberries.ru", wb:"wildberries.ru", telegram:"telegram.org"};
+const OFFICIAL = ["gosuslugi.ru","sberbank.ru","sberbank.com","sber.ru","vtb.ru","tbank.ru","tinkoff.ru","alfabank.ru","mvd.ru","xn--b1aew.xn--p1ai",
+  "nalog.gov.ru","pochta.ru","avito.ru","ozon.ru","wildberries.ru","wb.ru","telegram.org","t.me"];
+const SHORT = ["bit.ly","clck.ru","tinyurl.com","t.ly","goo.su","cutt.ly","is.gd","vk.cc","u.to","rb.gy"];
+const isOfficial = d => OFFICIAL.some(o => d===o || d.endsWith("."+o));
+// \w в JS не видит кириллицу — заменяем на «любая буква/цифра» с флагом u
+const uni = re => new RegExp(re.source.replace(/\\w/g, "[\\p{L}\\p{N}]"), "giu");
+RULES.forEach(r => { if (r.re) r.re = uni(r.re); });
+
+function analyze(text){
+  const hits = [], spans = [];
+  const add = (rule, s, e, extra) => { spans.push([s,e]); if(!hits.some(h=>h.r.id===rule.id && !extra)) hits.push({r:rule, extra}); };
+  const R = id => RULES.find(r=>r.id===id);
+  // «назовите/продиктуйте код», но не «никому не сообщайте код»
+  const codeRe = /(назов|продикт|сообщ|скаж|отправ|пришл|скин|введ|напиш)\w*[^.!?\n]{0,25}код\w*|код\w*[^.!?\n]{0,25}(назов|продикт|сообщ|скаж|отправ|пришл|скин|напиш)\w*/gi;
+  const codeU = uni(codeRe);
+  for (const m of text.matchAll(codeU)) {
+    const before = text.slice(Math.max(0,m.index-12), m.index).toLowerCase();
+    if (/(^|\s)не\s*$/.test(before)) continue;
+    add(R("code"), m.index, m.index+m[0].length);
+  }
+  RULES.filter(r=>r.re).forEach(r=>{ for (const m of text.matchAll(r.re)) add(r, m.index, m.index+m[0].length); });
+  // ссылки
+  const urlRe = /\b((?:https?:\/\/)?(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/[^\s]*)?)/gi;
+  for (const m of text.matchAll(urlRe)) {
+    const host = m[1].replace(/^https?:\/\//i,"").split(/[\/?#]/)[0].toLowerCase().replace(/^www\./,"");
+    if (!/[a-z]/.test(host.split(".").pop())) continue;
+    const s = m.index, e = m.index+m[1].length;
+    const brand = Object.keys(BRANDS).find(b => host.replace(/[^a-z]/g,"").includes(b));
+    if (brand && !isOfficial(host)) { spans.push([s,e]); hits.push({r:R("fake"), extra:[host, BRANDS[brand]]}); }
+    else if (SHORT.some(x=>host===x)) add(R("short"), s, e);
+    else if (!isOfficial(host)) add(R("link"), s, e);
+  }
+  const ids = [...new Set(hits.map(h=>h.r.id))];
+  const risk = Math.min(100, ids.reduce((a,id)=>a+R(id).w, 0));
+  return { hits, spans, risk, level: risk>=50 ? 2 : risk>=20 ? 1 : 0 };
+}
+
+function markText(text, spans){
+  const sorted = spans.slice().sort((a,b)=>a[0]-b[0]); const merged = [];
+  for (const sp of sorted){ const l = merged[merged.length-1]; if (l && sp[0] <= l[1]) l[1] = Math.max(l[1], sp[1]); else merged.push(sp.slice()); }
+  let out = "", pos = 0;
+  for (const [s,e] of merged){ out += esc(text.slice(pos,s)) + "<mark>" + esc(text.slice(s,e)) + "</mark>"; pos = e; }
+  return out + esc(text.slice(pos));
+}
+
+let lastCheck = null;
+function runCheck(){
+  const text = $("#msg").value.trim();
+  if (text.length < 3){ $("#msg").focus(); $("#msg").classList.remove("shake"); void $("#msg").offsetWidth; $("#msg").classList.add("shake"); haptic("err"); return; }
+  lastCheck = { text, res: analyze(text) };
+  $("#checkForm").style.display = "none"; $("#checkRes").style.display = "";
+  renderCheck(true);
+  haptic(lastCheck.res.level===2 ? "err" : lastCheck.res.level===0 ? "ok" : "");
+  window.scrollTo({top:0});
+  if (big) say(sayText("check"));
+}
+function renderCheck(animate){
+  if (!lastCheck) return;
+  const { text, res } = lastCheck;
+  const arc = $("#gArc"), nd = $("#needle");
+  if (animate){ arc.style.transition = nd.style.transition = "none"; arc.style.strokeDashoffset = 100; nd.style.transform = "rotate(-90deg)"; void arc.getBoundingClientRect(); arc.style.transition = nd.style.transition = ""; }
+  requestAnimationFrame(()=>{ arc.style.strokeDashoffset = 100 - res.risk; nd.style.transform = `rotate(${-90 + res.risk*1.8}deg)`; });
+  if (animate){ let k=0; const t=setInterval(()=>{ k=Math.min(res.risk,k+3); $("#gNum").textContent=k; if(k>=res.risk) clearInterval(t); }, 25); }
+  else $("#gNum").textContent = res.risk;
+  const [h,p] = T("levels")[res.level];
+  $("#risk").className = "risk lvl"+res.level; $("#risk").innerHTML = `<h2>${h}</h2><p>${p}</p>`;
+  $("#marked").innerHTML = markText(text, res.spans);
+  $("#flagsTitle").style.display = res.hits.length ? "" : "none";
+  $("#flags").innerHTML = res.hits.map((x,k)=>{
+    const d = x.r.d[lang]; const desc = typeof d === "function" ? d(...x.extra) : d;
+    return `<div class="flag" style="animation-delay:${.15+k*.08}s"><i>${x.r.ic}</i><div><b>${x.r.t[lang]}</b><span>${esc(desc)}</span></div></div>`;
+  }).join("");
+  $("#tip").className = "tip lvl"+res.level; $("#tip").textContent = T("tips")[res.level];
+}
+function resetCheck(){ $("#checkForm").style.display = ""; $("#checkRes").style.display = "none"; $("#msg").value = ""; lastCheck = null; stopSay(); }
+
+/* ===== Озвучка ===== */
+const TTS = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+if (!TTS) document.body.classList.add("no-tts");
+function stopSay(){ try{ if (TTS) speechSynthesis.cancel(); }catch(e){} }
+function say(text){
+  if (!TTS || !text) return;
+  stopSay();
+  const u = new SpeechSynthesisUtterance(text.replace(/\[\[|\]\]/g,"").replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu,""));
+  u.lang = "ru-RU"; u.rate = big ? 0.88 : 1;
+  const v = speechSynthesis.getVoices().find(v=>/^ru/i.test(v.lang)); if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+function sayText(kind){
+  if (kind==="q"){ const s = SCEN[order[i]]; return `${s.from[lang]}. ${s.text[lang]}`; }
+  if (kind==="v"){ const s = SCEN[order[i]]; const ok = $("#phone").dataset.ok==="1"; return `${T(ok?"right":"wrong")}. ${T(s.fraud?"wasFraud":"wasSafe")}. ${s.why[lang]}`; }
+  if (kind==="rules") return T("rules").map(r=>r[1]).join(" ");
+  if (kind==="steps") return T("steps").map((s,k)=>`${k+1}. ${s}`).join(" ");
+  if (kind==="check" && lastCheck){
+    const r = lastCheck.res; const [h,p] = T("levels")[r.level];
+    return `${h}. ${p} ` + r.hits.map(x=>x.r.t[lang]).join(". ") + ". " + T("tips")[r.level];
+  }
+  return "";
+}
+document.addEventListener("click", e=>{ const b = e.target.closest("[data-say]"); if (b){ haptic(); say(sayText(b.dataset.say)); } });
+
+/* ===== Режим для пожилых ===== */
+function applyBig(){
+  document.body.classList.toggle("big", big);
+  $("#bigBtn").classList.toggle("on", big); $("#bigCard").classList.toggle("on", big);
+}
+function toggleBig(){ big = !big; store.set("big", big?"1":"0"); applyBig(); haptic(); if (big) say(T("bigCardSub")); else stopSay(); }
+$("#bigBtn").onclick = $("#bigCard").onclick = toggleBig;
+
+function extraLang(){
+  $("#msg").placeholder = T("checkPh");
+  $("#chips").innerHTML = T("examples").map((l,k)=>`<button data-ex="${k}">${l}</button>`).join("");
+  $("#chips").querySelectorAll("button").forEach(b=>b.onclick=()=>{ $("#msg").value = EXAMPLES[+b.dataset.ex]; haptic(); });
+  if ($("#check").classList.contains("on")) renderCheck(false);
+}
+$("#toCheck").onclick = ()=>{ haptic(); resetCheck(); show("check"); };
+$("#checkBtn").onclick = runCheck;
+$("#checkAgain").onclick = ()=>{ haptic(); resetCheck(); setTimeout(()=>$("#msg").focus(),50); };
+$("#checkBack").onclick = back;
+$("#toHelp3").onclick = ()=>{ haptic(); show("help"); };
+applyBig();
 
 /* ===== Кнопки ===== */
 $("#start").onclick = ()=>{ haptic(); start(); };
